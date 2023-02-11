@@ -1,0 +1,15 @@
+@use "../../styles/colors";
+
+.headerContainer {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background-color: colors.$background_paper;
+
+ .searchInput {
+  background-color: colors.$background_default;
+  border-radius: 30px;
+  width: 580px;
+  height: 51px;
+ }
+}
