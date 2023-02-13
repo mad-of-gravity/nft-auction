@@ -1,0 +1,29 @@
+@use "../../styles/colors";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+.user {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+
+    .userInfo {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Montserrat', sans-serif;
+        padding: 6px;
+
+        .name {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: colors.$text_primary;
+            margin: 0;
+        }
+
+        .info {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: colors.$secondary_main;
+            margin: 0;
+        }
+    }
+}
