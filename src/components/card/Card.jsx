@@ -24,8 +24,7 @@ export default function Card({
   ...props
 }) {
   return (
-    <Box sx={{ maxWidth: 319 }}>
-      <CardMUI variant="outlined" className={classNames(styles.card)}>
+    <CardMUI variant="outlined" className={classNames(styles.card)}>
         <CardContent>
           <Avatar
             url={user.avatar.url}
@@ -51,6 +50,5 @@ export default function Card({
           </div>
         </CardContent>
       </CardMUI>
-    </Box>
   );
 }
