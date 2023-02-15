@@ -43,11 +43,12 @@
             }
         }
 
-        .chipOutlined {
+        .likes {
             font-family: 'Montserrat', sans-serif;
             font-size: 14.08px;
             font-weight: 500;
             color: colors.$secondary_main;
+            border-width: 1.5px;
             border-color: colors.$secondary_main;
             background-color: rgba(36, 242, 94, .1);
             font-size: 1rem;

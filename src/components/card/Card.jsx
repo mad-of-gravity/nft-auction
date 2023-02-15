@@ -23,6 +23,8 @@ export default function Card({
   currency = "",
   ...props
 }) {
+  const millifiedLikes = millify(likes, { lowercase: true });
+
   return (
     <CardMUI className={classNames(styles.card)}>
         <CardContent>
@@ -39,14 +41,12 @@ export default function Card({
               <h2 className={classNames(styles.title)}>{name}</h2>
               <h3 className={classNames(styles.price)}>{price} {currency}</h3>
             </div>
-            <div className={classNames(styles.likes)}>
-              <Chip
+            <Chip
                 icon={<FavoriteIcon className={classNames(styles.favoriteIcon)}/>}
-                label={millify(likes, { lowercase: true })}
+                label={millifiedLikes}
                 variant="outlined"
-                className={classNames(styles.chipOutlined)}
+                className={classNames(styles.likes)}
               />
-            </div>
           </div>
         </CardContent>
       </CardMUI>
