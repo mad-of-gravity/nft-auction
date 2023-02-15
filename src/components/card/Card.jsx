@@ -36,7 +36,7 @@ export default function Card({
           </div>
           <div className={classNames(styles.nftFooter)}>
             <div className={classNames(styles.nftInfo)}>
-              <h2 className={classNames(styles.name)}>{name}</h2>
+              <h2 className={classNames(styles.title)}>{name}</h2>
               <h3 className={classNames(styles.price)}>{price} {currency}</h3>
             </div>
             <div className={classNames(styles.likes)}>
