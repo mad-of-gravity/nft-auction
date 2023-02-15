@@ -23,7 +23,7 @@ export default function Card({
   currency = "",
   ...props
 }) {
-  const millifiedLikes = millify(likes, { lowercase: true });
+  const millifiedLikes = millify(likes);
 
   return (
     <CardMUI className={classNames(styles.card)}>
