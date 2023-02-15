@@ -12,5 +12,5 @@ const user = {
 }
 
 export default function Index() {
-  return <Card name="Clock" user={user} size={32} price="~12.2" likes="1100"/>;
+  return <Card name="Clock" user={user} size={32} mediaUrl="images/nft.jpg" price="~12.2" currency="ETH" likes="1100"/>;
 }

@@ -24,7 +24,7 @@ export default function Card({
   ...props
 }) {
   return (
-    <Box sx={{ maxWidth: 300, borderRadius: '15px' }}>
+    <Box sx={{ maxWidth: 319 }}>
       <CardMUI variant="outlined" className={classNames(styles.card)}>
         <CardContent>
           <Avatar
@@ -32,17 +32,13 @@ export default function Card({
             verified={user.verified}
             size={props.size}
           />
-          <CardMedia
-            className={classNames(styles.media)}
-            component="img"
-            height="194"
-            image="images/nft.jpg"
-            alt="NFT image"
-          />
+          <div className={classNames(styles.media)}>
+            <img className={classNames(styles.nft)} src={mediaUrl} alt="NFT image" />
+          </div>
           <div className={classNames(styles.nftFooter)}>
             <div className={classNames(styles.nftInfo)}>
               <h2 className={classNames(styles.name)}>{name}</h2>
-              <h3 className={classNames(styles.price)}>{price} ETH</h3>
+              <h3 className={classNames(styles.price)}>{price} {currency}</h3>
             </div>
             <div className={classNames(styles.likes)}>
               <Chip
