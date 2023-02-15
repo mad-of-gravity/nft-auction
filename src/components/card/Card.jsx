@@ -23,30 +23,30 @@ export default function Card({
   currency = "",
   ...props
 }) {
+  const millifiedLikes = millify(likes);
+
   return (
-    <CardMUI variant="outlined" className={classNames(styles.card)}>
+    <CardMUI className={classNames(styles.card)}>
         <CardContent>
           <Avatar
             url={user.avatar.url}
             verified={user.verified}
             size={props.size}
           />
-          <div className={classNames(styles.media)}>
-            <img className={classNames(styles.nft)} src={mediaUrl} alt="NFT image" />
+          <div className={classNames(styles.nftContainer)}>
+            <img className={classNames(styles.media)} src={mediaUrl} alt="NFT image" />
           </div>
           <div className={classNames(styles.nftFooter)}>
             <div className={classNames(styles.nftInfo)}>
-              <h2 className={classNames(styles.name)}>{name}</h2>
+              <h2 className={classNames(styles.title)}>{name}</h2>
               <h3 className={classNames(styles.price)}>{price} {currency}</h3>
             </div>
-            <div className={classNames(styles.likes)}>
-              <Chip
+            <Chip
                 icon={<FavoriteIcon className={classNames(styles.favoriteIcon)}/>}
-                label={millify(likes, { lowercase: true })}
+                label={millifiedLikes}
                 variant="outlined"
-                className={classNames(styles.chipOutlined)}
+                className={classNames(styles.likes)}
               />
-            </div>
           </div>
         </CardContent>
       </CardMUI>
