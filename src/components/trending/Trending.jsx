@@ -6,7 +6,6 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Stack,
 } from "@mui/material";
 import styles from "./Trending.module.scss";
 import classNames from "classnames";
