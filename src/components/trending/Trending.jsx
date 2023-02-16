@@ -27,7 +27,6 @@ export default function Trending({ cards = [] }) {
           <Select
             labelId="trending-select"
             id="select"
-            className={classNames(styles.select)}
           >
             <MenuItem value={1}>Sunday</MenuItem>
             <MenuItem value={2}>Monday</MenuItem>
@@ -40,7 +39,7 @@ export default function Trending({ cards = [] }) {
         {cards &&
           cards.map((card, index) => (
             <Grid item key={index} sm={12} md={3} lg={3} xl={3}>
-              <Card size={35} {...card} className={classNames(styles.card)} />
+              <Card size={35} {...card} />
             </Grid>
           ))}
       </Grid>
