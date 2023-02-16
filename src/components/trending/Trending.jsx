@@ -1,12 +1,12 @@
 import {
   Box,
   Grid,
-  Container,
   FormControl,
   InputLabel,
   Select,
   MenuItem,
 } from "@mui/material";
+import Container from "@mui/material/Container";
 import styles from "./Trending.module.scss";
 import classNames from "classnames";
 import Card from "../card/Card";
