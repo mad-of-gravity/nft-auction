@@ -14,7 +14,7 @@ import Card from "../card/Card";
 
 export default function Trending({ cards = [] }) {
   return (
-    <Container className={classNames(styles.trendingContainer)}>
+    <Container>
       <Box
         display="flex"
         justifyContent="space-between"
