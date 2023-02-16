@@ -19,6 +19,7 @@ export default function Trending({ cards = [] }) {
         display="flex"
         justifyContent="space-between"
         alignItems="center"
+        flexWrap="wrap"
         className={classNames(styles.headerBox)}
       >
         <h1 className={classNames(styles.heading)}>Trending</h1>
