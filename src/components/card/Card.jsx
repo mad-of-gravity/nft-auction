@@ -48,12 +48,28 @@ export default function Card({
     }
   };
 
+  //Live badge icon
+  const badge = (
+    <div className={classNames(styles.badge)}>
+      <CircleIcon className={classNames(styles.circle)} /> LIVE
+    </div>
+  );
+
+  
+  const countdown = (
+    <div className={styles.counter}>
+      <Countdown date={Date.now() + timeLeft} renderer={renderer} />
+    </div>
+  );
+
   const millifiedLikes = millify(likes, { lowercase: true });
   return (
-    <CardMUI className={classNames(styles.card)} sx={{
-      backgroundColor: (live) ? "rgba(36, 242, 94, .1)" : null,
-      
-    }}>
+    <CardMUI
+      className={classNames(styles.card)}
+      sx={{
+        backgroundColor: live ? "rgba(36, 242, 94, .1)" : null,
+      }}
+    >
       <CardContent>
         <Avatar
           url={user.avatarUrl}
@@ -66,16 +82,8 @@ export default function Card({
             src={mediaUrl}
             alt="NFT image"
           />
-          {live ? (
-            <>
-              <div className={classNames(styles.badge)}>
-                <CircleIcon className={classNames(styles.circle)}/> LIVE
-              </div>
-              <div className={styles.counter}>
-                <Countdown date={Date.now() + timeLeft} renderer={renderer} />
-              </div>
-            </>
-          ) : null}
+          {live ? badge : null}
+          {live ? countdown : null}
         </div>
         <div className={classNames(styles.nftFooter)}>
           <div className={classNames(styles.nftInfo)}>
