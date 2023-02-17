@@ -81,9 +81,11 @@ export default function Card({
             src={mediaUrl}
             alt="NFT image"
           />
+
+          {live && badge}
+          {live && countdown}
         </div>
-        {live ? badge : null}
-        {live ? countdown : null}
+        
         <div className={classNames(styles.nftFooter)}>
           <div className={classNames(styles.nftInfo)}>
             <h2 className={classNames(styles.title)}>{name}</h2>
