@@ -55,7 +55,6 @@ export default function Card({
     </div>
   );
 
-  
   const countdown = (
     <div className={styles.counter}>
       <Countdown date={Date.now() + timeLeft} renderer={renderer} />
@@ -82,9 +81,9 @@ export default function Card({
             src={mediaUrl}
             alt="NFT image"
           />
-          {live ? badge : null}
-          {live ? countdown : null}
         </div>
+        {live ? badge : null}
+        {live ? countdown : null}
         <div className={classNames(styles.nftFooter)}>
           <div className={classNames(styles.nftInfo)}>
             <h2 className={classNames(styles.title)}>{name}</h2>
