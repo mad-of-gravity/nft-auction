@@ -1,0 +1,23 @@
+@use "../../styles/colors";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap');
+
+.headerBox {
+    margin-bottom: 1.2rem;
+
+    .heading {
+        margin: 0;
+        font-size: 3rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        color: colors.$text_primary;
+    }
+
+    .formControl {
+        width: 220px;
+        height: 50px;
+        border: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        color: colors.$text_secondary;
+    }
+}
