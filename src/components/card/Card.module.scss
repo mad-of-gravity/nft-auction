@@ -1,98 +1,63 @@
 @use "../../styles/colors";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap');
 
-.card {
-    border-radius: 15px !important;
-    padding: 15px;
-    height: auto;
-    width: 290px;
+.mediaContainer {
+  position: relative;
+  margin-top: 10px;
+}
 
-    .nftContainer {
-        margin: 16px 0;
-        position: relative;
+.media {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
 
-        .media {
-            border-radius: 15px;
-            width: 100%;
-            height: 100%;
-        }
+.cardText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-        .counter {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            bottom: 0;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-            width: 100%;
-            height: 42px;
-            background-color: colors.$secondary_main;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.12rem;
-            font-weight: 700;
-            color: colors.$background_paper;
-        }
+.title {
+  font-weight: 900 !important;
+}
 
-        .badge {
-            position: absolute;
-            width: 75px;
-            height: 30px;
-            top: 7px;
-            left: 7px;
-            border-radius: 7px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: colors.$secondary_main;
-            color: colors.$background_paper;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-    }
+.price {
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+}
 
-    .nftFooter {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+.badge,
+.countdown {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: colors.$secondary_main;
+  color: colors.$background_paper;
+}
 
-        .nftInfo {
-            .title {
-                margin: 0;
-                padding: 0;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 1rem;
-                font-weight: 900;
-                color: colors.$text_primary;
-            }
+.badge {
+  top: 10px;
+  left: 10px;
+  gap: 4px;
+  width: 75px;
+  height: 30px;
+  border-radius: 7px;
+}
 
-            .price {
-                margin: 0;
-                padding: 0;
-                font-family: 'Montserrat', sans-serif;
-                font-size: .8rem;
-                font-weight: 700;
-                color: colors.$secondary_main;
-            }
-        }
+.badgeText {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
 
-        .likes {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14.08px;
-            font-weight: 500;
-            color: colors.$secondary_main;
-            border-width: 1.5px;
-            border-color: colors.$secondary_main;
-            background-color: rgba(36, 242, 94, .1);
-            font-size: 1rem;
-
-            .favoriteIcon {
-                color: inherit;
-                font-size: inherit;
-            }
-        }
-    }
+.countdown {
+  bottom: 10px;
+  width: 100%;
+  height: 42px;
+  border-radius: 0px 0px 15px 15px;
+  background-color: colors.$secondary_main;
+  font-size: 1.125rem;
+  font-weight: 700;
 }

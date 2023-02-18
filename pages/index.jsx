@@ -60,7 +60,7 @@ const cardData = {
 };
 
 const user = {
-   avatarUrl: "images/avatar.png",
+   avatar: {url: "images/avatar.png"},
    verified: true,
 }
 
@@ -75,7 +75,7 @@ export default function Index() {
       mediaUrl="images/nft.jpg"
       user={user}
       size={35}
-      timeLeft={134444000}
+      timeLeft={5000}
     />
   );
 }
