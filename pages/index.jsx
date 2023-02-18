@@ -75,7 +75,7 @@ export default function Index() {
       mediaUrl="images/nft.jpg"
       user={user}
       size={35}
-      timeLeft={13000}
+      timeLeft={134444000}
     />
   );
 }

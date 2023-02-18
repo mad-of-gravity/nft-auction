@@ -51,7 +51,7 @@ export default function Card({
   //Live badge icon
   const badge = (
     <div className={classNames(styles.badge)}>
-      <CircleIcon className={classNames(styles.circle)} /> LIVE
+      <CircleIcon sx={{fontSize: "0.9rem"}}/> LIVE
     </div>
   );
 
