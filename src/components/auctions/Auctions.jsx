@@ -37,12 +37,13 @@ import {
         </Box>
   
         <Grid container rowSpacing={1} columnSpacing={1} justifyContent="center">
-          {cards &&
-            cards.map((card, index) => (
-              <Grid item key={index} sm={12} md={3} lg={3} xl={3}>
-                <Card size={35} {...card} />
-              </Grid>
-            ))}
+          {cards && cards.map((card, index) => {
+            return (
+                <Grid item key={index} sm={12} md={3} lg={3} xl={3}>
+                    <Card size={35} {...card} />
+                </Grid>
+            );
+          })}
         </Grid>
       </Container>
       </div>
