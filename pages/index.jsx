@@ -4,78 +4,65 @@ import Avatar from "../src/components/avatar/Avatar";
 import User from "../src/components/user/User";
 import Card from "../src/components/card/Card";
 import Trending from "../src/components/trending/Trending";
-
+import Auctions from "../src/components/auctions/Auctions";
 
 const cardData = {
   cards: [
     {
       name: "Ivy",
       user: {
-        avatar: {
-          url: "images/avatar.png",
-        },
-        verified: true,
+          avatar: "images/avatar.png",
+          verified: true,
       },
       mediaUrl: "images/nft.jpg",
       price: 1,
       currency: "ETH",
+      timeLeft: 10000,
     },
     {
-      name: "Judie",
+      name: "Ivy",
       user: {
-        avatar: {
-          url: "images/avatar.png",
-        },
-        verified: true,
+          avatar: "images/avatar.png",
+          verified: true,
       },
       mediaUrl: "images/nft.jpg",
-      price: 2.3,
+      price: 1,
       currency: "ETH",
+      timeLeft: 10000,
     },
     {
-      name: "Juniper",
+      name: "Ivy",
       user: {
-        avatar: {
-          url: "images/avatar.png",
-        },
-        verified: true,
+          avatar: "images/avatar.png",
+          verified: true,
       },
       mediaUrl: "images/nft.jpg",
-      price: 5,
+      price: 1,
       currency: "ETH",
+      timeLeft: 10000,
     },
     {
-      name: "Maple",
+      name: "Ivy",
       user: {
-        avatar: {
-          url: "images/avatar.png",
-        },
-        verified: true,
+          avatar: "images/avatar.png",
+          verified: true,
       },
       mediaUrl: "images/nft.jpg",
-      price: 10,
+      price: 1,
       currency: "ETH",
+      timeLeft: 10000,
     },
   ],
 };
 
 const user = {
-   avatar: {url: "images/avatar.png"},
+   avatarUrl: "images/avatar.png",
    verified: true,
 }
 
 
 export default function Index() {
   return (
-    <Card
-      name="Suspect of change"
-      likes={1200}
-      price="2.3"
-      currency="ETH"
-      mediaUrl="images/nft.jpg"
-      user={user}
-      size={35}
-      timeLeft={5000}
-    />
+    <Auctions cards={cardData}/>
   );
 }

@@ -1,88 +1,81 @@
-import Countdown, { zeroPad } from "react-countdown";
-import classNames from "classnames";
-import { Card as MuiCard, Chip, CardContent, Typography } from "@mui/material";
-import CircleIcon from "@mui/icons-material/Circle";
-import millify from "millify";
+import Avatar from "../avatar/Avatar";
+import { Card as CardMUI, cardClasses, CardContent, Chip } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
+import CircleIcon from "@mui/icons-material/Circle";
 import styles from "./Card.module.scss";
-
-import Avatar from "../../components/avatar/Avatar";
+import classNames from "classnames";
+import millify from "millify";
+import Countdown, { zeroPad } from "react-countdown";
 
 export default function Card({
   name = "",
   likes = 0,
   mediaUrl = "",
-  user = { avatar: { url: "" }, verified: false },
+  user = {
+    avatarUrl: "",
+    verified: false,
+  },
   price = "",
   currency = "",
   timeLeft,
+  ...props
 }) {
-  const likesMilified = millify(likes);
+  //Countdown render function
+  const render = ({ hours, minutes, seconds }) => {
+    return (
+      <div className={classNames(styles.counter)}>
+        {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+      </div>
+    );
+  };
 
+  //Live badge icon
   const badge = (
     <div className={classNames(styles.badge)}>
-      <CircleIcon fontSize="11px" />
-      <p className={classNames(styles.badgeText)}>LIVE</p>
+      <CircleIcon sx={{ fontSize: "0.9rem" }} /> LIVE
     </div>
   );
 
-  const countdown = ({ hours, minutes, seconds }) => (
-    <div className={classNames(styles.countdown)}>
-      {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
-    </div>
-  );
-
+  const millifiedLikes = millify(likes, { lowercase: true });
   return (
-    <MuiCard
-      className={classNames(
-        styles.card,
-        timeLeft ? styles.cardLive : styles.card
-      )}
+    <CardMUI
+      className={classNames(styles.card)}
+      sx={{
+        backgroundColor: timeLeft ? "rgba(36, 242, 94, .1)" : null,
+      }}
     >
-      <div className={classNames(styles.avatarHolder)}>
+      <CardContent>
         <Avatar
-          src={user.avatar.url}
-          size="33"
+          url={user.avatarUrl}
           verified={user.verified}
-          badgeSize="15.55"
+          size={props.size}
         />
-      </div>
-      <div className={classNames(styles.imageHolder)}>
-        {timeLeft && badge}
-        <img src={mediaUrl} className={classNames(styles.media)} alt="" />
-        {timeLeft && (
-          <Countdown date={Date.now() + timeLeft} renderer={countdown} />
-        )}
-      </div>
-      <CardContent className={classNames(styles.titles)}>
-        <div>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            component="p"
-            className={classNames(styles.title)}
-          >
-            {name}
-          </Typography>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            className={classNames(styles.price)}
-          >
-            ~{price} {currency}
-          </Typography>
+        <div className={classNames(styles.nftContainer)}>
+          <img
+            className={classNames(styles.media)}
+            src={mediaUrl}
+            alt="NFT image"
+          />
+
+          {timeLeft && badge}
+          {timeLeft && <Countdown date={Date.now() + timeLeft} renderer={render} />}
         </div>
 
-        <Chip
-          label={likesMilified}
-          variant="outlined"
-          color="secondary"
-          size="small"
-          icon={<FavoriteIcon />}
-          className={classNames(styles.likes)}
-        />
+        <div className={classNames(styles.nftFooter)}>
+          <div className={classNames(styles.nftInfo)}>
+            <h2 className={classNames(styles.title)}>{name}</h2>
+            <h3 className={classNames(styles.price)}>
+              {price} {currency}
+            </h3>
+          </div>
+          <Chip
+            icon={<FavoriteIcon className={classNames(styles.favoriteIcon)} />}
+            label={millifiedLikes}
+            variant="outlined"
+            className={classNames(styles.likes)}
+          />
+        </div>
       </CardContent>
-    </MuiCard>
+    </CardMUI>
   );
 }
