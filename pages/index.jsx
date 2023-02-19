@@ -6,6 +6,7 @@ import Card from "../src/components/card/Card";
 import Trending from "../src/components/trending/Trending";
 import Auctions from "../src/components/auctions/Auctions";
 import Footer from "../src/components/footer/Footer";
+import Step from "../src/components/how/Step";
 
 const cardData = [
   {
@@ -62,6 +63,6 @@ const user = {
 
 export default function Index() {
   return (
-    <Footer />
+    <Step number={1} title="Crypto Wallet" description="A crypto wallet, such as MetaMask, stores your ETH and processes transactions on the Ethereum blockchain." />
   );
 }
