@@ -1,0 +1,29 @@
+@use "../../styles/colors";
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: auto;
+  text-align: center;
+  background-color: colors.$background_paper;
+  align-items: end;
+
+  .copyright {
+    color: colors.$text_secondary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .footerButton {
+    padding: 0 8px;
+    color: colors.$text_secondary;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: capitalize;
+  }
+}
