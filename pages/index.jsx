@@ -5,6 +5,7 @@ import User from "../src/components/user/User";
 import Card from "../src/components/card/Card";
 import Trending from "../src/components/trending/Trending";
 import Auctions from "../src/components/auctions/Auctions";
+import Footer from "../src/components/footer/Footer";
 
 const cardData = [
   {
@@ -61,6 +62,6 @@ const user = {
 
 export default function Index() {
   return (
-    <Auctions cards={cardData}/>
+    <Footer />
   );
 }
