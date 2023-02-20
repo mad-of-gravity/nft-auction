@@ -1,39 +1,57 @@
 @use "../../styles/colors";
 
-.stepGrid {
-    background-color: colors.$background_paper;
-    border-radius: 30px;
+.howWrapper {
+    width: 100vw;
+    height: 639px;
+    margin: 80px 0;
     padding: 0;
+    background-color: colors.$primary_main;
 
-    .stepNumber {
-        margin: 0;
-        background-color: rgba(78, 36, 242, .1);
-        font-weight: 700;
-        font-size: 100.33px;
-        line-height: 215px;
-        text-align: center;
-        border-radius: 30px 0px 0px 30px;
-    }
+    .grid {
+        height: 100%;
+        
+        .textContentWrapper {
+            width: 50%;
+            margin: 0 auto;
 
-    .stepTextContent {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+            .title {
+                font-weight: 900;
+                font-size: 3.75rem;
+                line-height: 73.14px;
+                color: colors.$text_primary;
+            }
 
-        .stepTitle {
-            font-weight: 700;
-            size: 32px;
-            text-transform: uppercase;
-            color: colors.$text_primary;
+            .description {
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 26px;
+                color: colors.$text_secondary;
+            }
+
+            .button {
+                width: 195px;
+                height: 59px;
+                border-radius: 30px;
+                background-color: colors.$text_primary;
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 19.04px;
+                color: colors.$primary_main;
+                box-shadow: none;
+            }
         }
 
-        .stepDescription {
-            font-weight: 400;
-            size: 24px;
-            color: colors.$text_secondary;
-            margin-top: 0;
+        .stepCardWrapper {
+            margin: -60px auto;
+            padding: 0 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .item {
+                margin: 20px 0;
+                height: 210px;
+            }
         }
     }
 }
