@@ -1,0 +1,57 @@
+@use "../../styles/colors";
+
+.howWrapper {
+    width: 100vw;
+    height: 639px;
+    margin: 80px 0;
+    padding: 0;
+    background-color: colors.$primary_main;
+
+    .grid {
+        height: 100%;
+        
+        .textContentWrapper {
+            width: 50%;
+            margin: 0 auto;
+
+            .title {
+                font-weight: 900;
+                font-size: 3.75rem;
+                line-height: 73.14px;
+                color: colors.$text_primary;
+            }
+
+            .description {
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 26px;
+                color: colors.$text_secondary;
+            }
+
+            .button {
+                width: 195px;
+                height: 59px;
+                border-radius: 30px;
+                background-color: colors.$text_primary;
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 19.04px;
+                color: colors.$primary_main;
+                box-shadow: none;
+            }
+        }
+
+        .stepCardWrapper {
+            margin: -60px auto;
+            padding: 0 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .item {
+                margin: 20px 0;
+                height: 210px;
+            }
+        }
+    }
+}
