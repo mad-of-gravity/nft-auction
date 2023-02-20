@@ -6,7 +6,7 @@ export default function Step({ number = 0, title = "", description = "",}) {
   return (
     <div className={classNames(styles.stepWrapper)}>
       <div className={classNames(styles.stepNumber)}>
-        {number}
+        <div className={classNames(styles.number)}>{number}</div>
       </div>
       <div className={classNames(styles.stepContent)}>
         <h1 className={classNames(styles.stepTitle)}>{title}</h1>

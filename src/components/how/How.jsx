@@ -37,9 +37,9 @@ export default function How({
         >
           {items &&
             items.map((item, index) => (
-              <div className={classNames(styles.item)}>
+              <div className={classNames(styles.item)} key={index}>
                 <Step
-                  number={index}
+                  number={index + 1}
                   title={item.title}
                   description={item.description}
                 />
