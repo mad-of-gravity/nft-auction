@@ -1,0 +1,47 @@
+@use "../../styles/colors";
+
+.container {
+    border-radius: inherit;
+    .collectorCard {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 4.90rem;
+        border-radius: inherit;
+
+        .collectorID {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 75px;
+            height: inherit;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 900;
+            line-height: 24.38px;
+            color: colors.$text_primary;
+            background: rgba(colors.$primary_main, 0.2);
+        }
+
+        .collectorContent {
+            padding-left: 10px;
+            width: 100%;
+            height: inherit;
+            background: rgba(colors.$primary_main, 0.1);
+        }
+    }
+}
+
+.container.light {
+    .collectorID {
+        background: rgba(colors.$primary_main, 0.3);
+    }
+
+    .collectorContent {
+        background: rgba(colors.$primary_main, 0.2);
+    }
+}
+
+.container:first-of-type {
+    border-radius: 15px 15px 0 0;
+}
