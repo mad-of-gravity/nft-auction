@@ -1,11 +1,7 @@
 import Collector from "./Collector";
 import styles from "./CollectorColumn.module.scss";
 import classNames from "classnames";
-// name="terrika77"
-//       info={134}
-//       avatar="images/avatar.png"
-//       verified={true}
-//       id={1}
+
 export default function CollectorColumn({items = []}) {
     return (
         <div className={classNames(styles.container)}>

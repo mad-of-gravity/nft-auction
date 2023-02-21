@@ -1,13 +1,12 @@
 @use "../../styles/colors";
 
-.container {
-    border-radius: inherit;
+.container {  
     .collectorCard {
         display: flex;
         flex-direction: row;
         align-items: center;
         height: 4.90rem;
-        border-radius: inherit;
+        border-radius: 15px;
 
         .collectorID {
             display: flex;
@@ -22,7 +21,7 @@
             color: colors.$text_primary;
             background: rgba(colors.$primary_main, 0.2);
         }
-
+        
         .collectorContent {
             padding-left: 10px;
             width: 100%;
@@ -40,8 +39,4 @@
     .collectorContent {
         background: rgba(colors.$primary_main, 0.2);
     }
-}
-
-.container:first-of-type {
-    border-radius: 15px 15px 0 0;
 }
