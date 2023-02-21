@@ -1,43 +1,36 @@
 import { useRouter } from "next/dist/client/router";
+
 import styles from "./Featured.module.scss";
 import classNames from "classnames";
-import Container from "@mui/material/Container";
-import { ImageList, ImageListItem } from "@mui/material";
+import { Container, ImageList, ImageListItem } from "@mui/material";
 
 export default function Featured({ items = [] }) {
-  const router = useRouter();
+  const route = useRouter();
 
   const handleImageClick = (i) => {
-    router.push(items[i].href);
+    route.push(items[i].href);
   };
 
   return (
-    <>
+    <div>
       <Container maxWidth="xl">
-        <ImageList
-          className={styles.imageList}
-          variant="quilted"
-          cols={6}
-          gap={15}
-        >
-          {items &&
-            items.map((item, index) => (
-              <ImageListItem
-                key={index}
-                cols={item.cols || 1}
-                rows={item.rows || 1}
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  loading="lazy"
-                  className={classNames(styles.image)}
-                  onClick={handleImageClick(index)}
-                />
-              </ImageListItem>
-            ))}
+        <ImageList cols={6} gap={15}>
+          {items.map((item, index) => (
+            <ImageListItem
+              key={index}
+              cols={item.cols || 1}
+              rows={item.rows || 1}
+            >
+              <img
+                src={item.image}
+                alt={item.title}
+                onClick={() => handleImageClick(index)}
+                className={classNames(styles.imageListItem)}
+              />
+            </ImageListItem>
+          ))}
         </ImageList>
       </Container>
-    </>
+    </div>
   );
 }
