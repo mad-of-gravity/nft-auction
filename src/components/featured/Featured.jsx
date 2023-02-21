@@ -1,8 +1,8 @@
 
-import { Container, ImageList, ImageListItem } from "@mui/material";
+import { useRouter } from "next/dist/client/router";
 import styles from "./Featured.module.scss";
 import classNames from "classnames";
-import { useRouter } from 'next/router'
+import { Container, ImageList, ImageListItem } from "@mui/material";
 
 export default function Featured({items= []}) {
   const router = useRouter();
@@ -12,7 +12,7 @@ export default function Featured({items= []}) {
   }
 
   return (
-    <Container className={classNames(styles.featuredContainer)} maxWidth="xl">
+    <Container maxWidth="xl">
       <ImageList 
         className={styles.imageList} 
         variant="quilted"
